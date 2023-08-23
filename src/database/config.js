@@ -1,13 +1,12 @@
 import Sequelize from 'sequelize'
 import colors from 'colors'
-//const colors = require('colors')
 
  export const sequelize = new Sequelize(
   'uluqgckh', // nombre de la base de datos 
   'uluqgckh', // nombre del usuario
-  'lm-Zc0fIms766L3z56Q77ESSuvKWHUnN', // contraseña de la base
+  'RLnFlSUmuWTcWi9UKBzkjIbW2Fqu3HkG', //contraseña de la base de datos
   {
-    host: 'localhost',
+    host: 'mahmud.db.elephantsql.com',
     port: 5432,
     dialect: 'postgres'
   }
