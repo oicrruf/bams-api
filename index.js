@@ -1,5 +1,5 @@
 import express from 'express'
-import { sequelize } from "./src/database/config"
+import { sequelize } from "./src/database/config.js"
 async function main(){
   try{
     await sequelize.sync({force:false})

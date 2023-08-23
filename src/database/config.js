@@ -1,5 +1,6 @@
 import Sequelize from 'sequelize'
-const colors = require('colors')
+import colors from 'colors'
+//const colors = require('colors')
 
  export const sequelize = new Sequelize(
   'uluqgckh', // nombre de la base de datos 
