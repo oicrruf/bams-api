@@ -9,7 +9,7 @@ import colors from 'colors'
     host: 'mahmud.db.elephantsql.com',
     port: 5432,
     dialect: 'postgres'
-  }
+  }   
 )
 
 

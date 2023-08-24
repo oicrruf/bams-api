@@ -9,6 +9,7 @@
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "express-async-handler": "^1.2.0",
+    "mysql2": "^3.6.0",
     "pg": "^8.11.3",
     "sequelize": "^6.32.1",
     "sequelize-auto": "^0.8.8"
