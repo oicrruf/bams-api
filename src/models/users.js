@@ -53,8 +53,8 @@ export default class users extends Model {
     tableName: 'users',
     schema: 'public',
     timestamps: true,
-    updatedAt:'update_at',
-    createdAt:'created_at',
+    updatedAt: 'update_at',
+    createdAt: 'created_at',
     indexes: [
       {
         name: "users_pkey",

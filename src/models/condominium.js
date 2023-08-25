@@ -30,9 +30,15 @@ export default class condominium extends Model {
       type: DataTypes.TEXT,
       allowNull: false
     },
+    created_at: {
+      type: DataTypes.DATEONLY,
+      allowNull: false,
+      defaultValue: Date.now()
+    },
     update_at: {
       type: DataTypes.DATEONLY,
-      allowNull: false
+      allowNull: false,
+      defaultValue: Date.now()
     },
     user_id: {
       type: DataTypes.INTEGER,
@@ -47,6 +53,8 @@ export default class condominium extends Model {
     tableName: 'condominium',
     schema: 'public',
     timestamps: true,
+    updatedAt: 'update_at',
+    createdAt: 'created_at',
     indexes: [
       {
         name: "condominium_pkey",
