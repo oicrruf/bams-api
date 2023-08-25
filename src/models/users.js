@@ -31,7 +31,6 @@ export default class users extends Model {
       allowNull: false
     },
     role_id: {
-      autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {

@@ -5,7 +5,7 @@ export default class users_propety extends Model {
   static init(sequelize, DataTypes) {
   return super.init({
     users_id: {
-      autoIncrement: true,
+      
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
@@ -14,7 +14,7 @@ export default class users_propety extends Model {
       }
     },
     propety_id: {
-      autoIncrement: true,
+      
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
