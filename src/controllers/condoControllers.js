@@ -3,11 +3,12 @@ import { sequelize } from '../database/config.js'
 import  asyncHandler  from 'express-async-handler'
 
 let models = modelInit(sequelize)
+const condos = models.condominium
 
 export const getCondos = asyncHandler( async (req, res) => {  
     let response;
     try {   
-        response = await models.condominium.findAll()
+        response = await condos.findAll()
     } catch (error) {
         console.error(error)
         res.status(500).json({"error": error})
@@ -25,7 +26,7 @@ export const createCondos = asyncHandler( async(req, res) => {
     }
 
 // crear condominio nuevo
-    const condo = await models.condominium.create({
+    const condo = await condos.create({
         name,
         address,
         city,
@@ -50,10 +51,28 @@ export const createCondos = asyncHandler( async(req, res) => {
     }
 })
 
-export const updateCondos = asyncHandler( async (req, res) => {     
-    res.status(200).json({"respuesta":"se actualizo"})
+export const updateCondos = asyncHandler( async (req, res) => {   
+    
+    const condo = await condos.findByPk(req.params.id)
+
+    if(!condo) {
+        res.status(400)
+        throw new Error ('Este condominio no existe')
+    }
+
+    const condoUpdated = await condo.update(req.body,{where:{id:req.params.id}})
+    res.status(200).json(condoUpdated)
 })
 
 export const deleteCondos = asyncHandler( async (req, res) => {     
-    res.status(200).json({"respuesta":"se actualizo"})
+
+    const condo = await condos.findByPk(req.params.id)
+
+    if(!condo) {
+        res.status(400)
+        throw new Error ('Este condominio no existe')
+    }
+
+    const deletedCondos = await condos.destroy({where:{id:req.params.id}})
+    res.status(200).json("Se borro exitosamente el condominio id:" + req.params.id+ deletedCondos)
 })
