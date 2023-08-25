@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { getCondos, createCondos,updateCondos } from "../controllers/controllerCondo.js";
+import { getCondos, createCondos,updateCondos } from "../controllers/condoControllers.js";
 
 const router = Router();
 
