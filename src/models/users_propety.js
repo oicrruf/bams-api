@@ -5,7 +5,6 @@ export default class users_propety extends Model {
   static init(sequelize, DataTypes) {
   return super.init({
     users_id: {
-      
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
@@ -14,7 +13,6 @@ export default class users_propety extends Model {
       }
     },
     propety_id: {
-      
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {

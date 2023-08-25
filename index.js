@@ -1,6 +1,7 @@
 import express from 'express'
 import { sequelize } from "./src/database/config.js"
 import routeUsers from './src/routes/usersRoutes.js'
+import rutasCondominio from './src/routes/routesCondo.js'
 
 async function main(){
   try{
@@ -14,6 +15,9 @@ const app = express()
 app.use(express.json())
 app.use(express.urlencoded({extended: false}))
 app.use(routeUsers)
+
+app.use(rutasCondominio)
+
 app.listen(3000)
   console.log('El servidor esta escuchando')
 }
