@@ -1,4 +1,4 @@
-import _sequelize from 'sequelize';
+import _sequelize, { DATE } from 'sequelize';
 const { Model, Sequelize } = _sequelize;
 
 export default class users extends Model {
@@ -27,7 +27,7 @@ export default class users extends Model {
       allowNull: false
     },
     phone: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.TEXT,
       allowNull: false
     },
     role_id: {
@@ -40,13 +40,21 @@ export default class users extends Model {
     },
     update_at: {
       type: DataTypes.DATEONLY,
-      allowNull: false
+      allowNull: false,
+      defaultValue: Date.now()
+    },
+    created_at: {
+      type: DataTypes.DATEONLY,
+      allowNull: false,
+      defaultValue: Date.now()
     }
   }, {
     sequelize,
     tableName: 'users',
     schema: 'public',
     timestamps: true,
+    updatedAt:'update_at',
+    createdAt:'created_at',
     indexes: [
       {
         name: "users_pkey",

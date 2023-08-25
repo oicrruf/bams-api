@@ -2,7 +2,7 @@ import modelsInit from '../models/init-models.js'
 import { sequelize } from '../database/config.js'
 let models = modelsInit(sequelize)
 
-/*export const getUsers = async(req,res) => {
+export const getUsers = async(req,res) => {
   let response
   try {
     response = await models.users.findAll()
@@ -12,9 +12,9 @@ let models = modelsInit(sequelize)
   }
   res.status(200).json(response)
 }
-*/
+
 export const createUsers = async(req,res) => {
-  let {name, lastname, email, password, phone, role_id } = req.body
+  let { name, lastname, email, password, phone, role_id } = req.body
   let response = null
   try {
     response = await models.users.create({
@@ -24,7 +24,6 @@ export const createUsers = async(req,res) => {
       password,
       phone, 
       role_id
-      
     })
   } catch (error) {
     console.error(error);
@@ -32,7 +31,7 @@ export const createUsers = async(req,res) => {
   }
   res.status(200).json(response)
 }
-/*
+
 export const changeUsers = async(req,res) => {
   let response = null
   let {id} = req.params
@@ -57,4 +56,3 @@ export const deleteUsers = async(req,res) => {
   }
   res.status(200).json(response)
 }
-*/
