@@ -1,4 +1,4 @@
-import _sequelize from 'sequelize';
+import _sequelize, { DATE } from 'sequelize';
 const { Model, Sequelize } = _sequelize;
 
 export default class users extends Model {
@@ -27,7 +27,7 @@ export default class users extends Model {
       allowNull: false
     },
     phone: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.TEXT,
       allowNull: false
     },
     role_id: {

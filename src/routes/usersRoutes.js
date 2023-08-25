@@ -1,12 +1,12 @@
 import { Router } from 'express'
-import { createUsers} from '../controllers/usersController.js'
-//, changeUsers, getUsers, deleteUsers
+import { createUsers, changeUsers, getUsers, deleteUsers } from '../controllers/usersController.js'
+
 const router = Router()
 
-//router.get('/api/getUsers', getUsers)
+router.get('/api/getUsers', getUsers)
 router.post('/api/createUsers', createUsers)
-//router.put('/api/changeUsers/:id', changeUsers)
-//router.delete('/api/deleteUsers/:id_users', deleteUsers)
+router.put('/api/changeUsers/:id', changeUsers)
+router.delete('/api/deleteUsers/:id_users', deleteUsers)
 
 
 
