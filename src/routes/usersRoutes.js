@@ -6,7 +6,7 @@ const router = Router()
 router.get('/api/getUsers', getUsers)
 router.post('/api/createUsers', createUsers)
 router.put('/api/changeUsers/:id', changeUsers)
-router.delete('/api/deleteUsers/:id_users', deleteUsers)
+router.delete('/api/deleteUsers/:id', deleteUsers)
 
 
 

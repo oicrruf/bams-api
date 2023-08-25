@@ -33,11 +33,10 @@ export const createUsers = async(req,res) => {
 }
 
 export const changeUsers = async(req,res) => {
-  let response = null
+  let response 
   let {id} = req.params
-  
   try {
-    response = await models.users.update(req.body,{where:{id_users:id}})
+    response = await models.users.update(req.body,{where:{id:id}})
   } catch (error) {
     console.error(error);
     res.status(500).json({"error": error})
@@ -46,10 +45,10 @@ export const changeUsers = async(req,res) => {
 }
 export const deleteUsers = async(req,res) => {
   let response = null
-  let {id_users} = req.params
+  let {id} = req.params
   
   try {
-    response = await models.users.destroy({where:{id_users:id}})
+    response = await models.users.destroy({where:{id}})
   } catch (error) {
     console.error(error);
     res.status(500).json({"error": error})
