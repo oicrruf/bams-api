@@ -24,13 +24,16 @@ export default class propety extends Model {
     },
     due_date: {
       type: DataTypes.DATEONLY,
-      allowNull: false
+      allowNull: false,
+      defaultValue: Date.now()
     }
   }, {
     sequelize,
     tableName: 'propety',
     schema: 'public',
-    timestamps: false,
+    timestamps: true,
+    updatedAt: 'due_date',
+    createdAt: 'due_date',
     indexes: [
       {
         name: "propety_pkey",

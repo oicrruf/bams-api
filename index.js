@@ -2,7 +2,8 @@ import express from 'express'
 import { sequelize } from "./src/database/config.js"
 import { errorHandler } from './src/middleware/errorMiddleware.js'
 import routeUsers from './src/routes/usersRoutes.js'
-import rutasCondominio from './src/routes/condoRoutes.js'
+import routeCondo from './src/routes/condoRoutes.js'
+import routesProperty from './src/routes/propertyRoutes.js'
 
 async function main(){
   try{
@@ -16,8 +17,9 @@ const app = express()
 app.use(express.json())
 app.use(express.urlencoded({extended: false}))
 app.use(routeUsers)
+app.use(routeCondo)
+app.use(routesProperty)
 
-app.use(rutasCondominio)
 app.use(errorHandler)
 
 app.listen(3000)
