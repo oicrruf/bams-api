@@ -3,7 +3,7 @@ import { sequelize } from "./src/database/config.js"
 import { errorHandler } from './src/middleware/errorMiddleware.js'
 import routeUsers from './src/routes/usersRoutes.js'
 import rutasCondominio from './src/routes/condoRoutes.js'
-
+import transactionRoutes from './src/routes/transactionsRoutes.js'
 async function main(){
   try{
     await sequelize.sync({force:false})
@@ -16,7 +16,7 @@ const app = express()
 app.use(express.json())
 app.use(express.urlencoded({extended: false}))
 app.use(routeUsers)
-
+app.use(transactionRoutes)
 app.use(rutasCondominio)
 app.use(errorHandler)
 

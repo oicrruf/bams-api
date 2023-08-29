@@ -1,4 +1,4 @@
-import _sequelize from 'sequelize';
+import _sequelize, { DATE } from 'sequelize';
 const { Model, Sequelize } = _sequelize;
 
 export default class transactions extends Model {
@@ -49,12 +49,24 @@ export default class transactions extends Model {
         model: 'payment_status',
         key: 'id'
       }
+    }, 
+    update_at: {
+      type: DataTypes.DATEONLY,
+      allowNull: false,
+      defaultValue: Date.now()
+    },
+    created_at: {
+      type: DataTypes.DATEONLY,
+      allowNull: false,
+      defaultValue: Date.now()
     }
   }, {
     sequelize,
     tableName: 'transactions',
     schema: 'public',
     timestamps: true,
+    updatedAt: 'update_at',
+    createdAt: 'created_at',
     indexes: [
       {
         name: "transactions_pkey",

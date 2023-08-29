@@ -1,5 +1,4 @@
 import Sequelize from 'sequelize'
-import colors from 'colors'
 
  export const sequelize = new Sequelize(
   'uluqgckh', // nombre de la base de datos 
