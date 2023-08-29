@@ -4,6 +4,7 @@ import { errorHandler } from './src/middleware/errorMiddleware.js'
 import routeUsers from './src/routes/usersRoutes.js'
 import routeCondo from './src/routes/condoRoutes.js'
 import routesProperty from './src/routes/propertyRoutes.js'
+import routeRole from './src/routes/roleRoutes.js'
 
 async function main(){
   try{
@@ -19,7 +20,7 @@ app.use(express.urlencoded({extended: false}))
 app.use(routeUsers)
 app.use(routeCondo)
 app.use(routesProperty)
-
+app.use(routeRole)
 app.use(errorHandler)
 
 app.listen(3000)
