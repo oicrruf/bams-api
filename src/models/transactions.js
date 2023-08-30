@@ -50,11 +50,6 @@ export default class transactions extends Model {
         key: 'id'
       }
     }, 
-    update_at: {
-      type: DataTypes.DATEONLY,
-      allowNull: false,
-      defaultValue: Date.now()
-    },
     created_at: {
       type: DataTypes.DATEONLY,
       allowNull: false,
@@ -64,9 +59,9 @@ export default class transactions extends Model {
     sequelize,
     tableName: 'transactions',
     schema: 'public',
-    timestamps: true,
-    updatedAt: 'update_at',
+    timestamps: false,
     createdAt: 'created_at',
+
     indexes: [
       {
         name: "transactions_pkey",
