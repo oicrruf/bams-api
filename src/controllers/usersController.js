@@ -68,12 +68,12 @@ export const loginUser = asyncHandler(async (req, res) =>{
 
     if(user && (await bcrypt.compare(password, user.password))){
       res.status(200).json({
-       
-        token: generateToken({ id: user.id,
-          name: user.name,
-          lastname: user.lastname,
-          email: user.email,
-          phone: user.phone,})
+        id: user.id,
+        name: user.name,
+        lastname: user.lastname,
+        email: user.email,
+        phone: user.phone,
+        token: generateToken(user.id)
       })
     }else{
       res.status(400)
@@ -82,12 +82,15 @@ export const loginUser = asyncHandler(async (req, res) =>{
 })
 
 //Generar token
-export const generateToken = (dataUser) => {
-  return jwt.sign( dataUser , process.env.JWT_SECRET,{
+export const generateToken = (id) => {
+  return jwt.sign( {id} , process.env.JWT_SECRET,{
       expiresIn: '30m'
   })
 }
 
+export const getUserData = asyncHandler( async (req, res) => {
+  res.json(req.user)
+})
 
 export const getUsers = async(req,res) => {
   let response

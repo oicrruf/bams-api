@@ -1,5 +1,6 @@
 import { Router } from "express";
 import { getCondos, createCondos,updateCondos, deleteCondos } from "../controllers/condoControllers.js";
+//import { protect }  from '../middleware/authmiddleware.js'
 
 const router = Router();
 
