@@ -6,6 +6,7 @@ import routeCondo from './src/routes/condoRoutes.js'
 import routesProperty from './src/routes/propertyRoutes.js'
 import routeRole from './src/routes/roleRoutes.js'
 import transactionRoutes from './src/routes/transactionsRoutes.js'
+import paymentsRouter from './src/routes/paymentsRouters.js'
 async function main(){
   try{
     await sequelize.sync({force:false})
@@ -21,6 +22,7 @@ app.use(routeUsers)
 app.use(routeCondo)
 app.use(routesProperty)
 app.use(routeRole)
+app.use(paymentsRouter)
 app.use(transactionRoutes)
 app.use(errorHandler)
 

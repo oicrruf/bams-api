@@ -40,7 +40,7 @@ export const changeRole = async(req,res) => {
 }
 export const deleteRole = async(req,res) => {
   let response = null
-  let {id} = req.params
+  let {id} = req.params.id
   
   try {
     response = await models.role.destroy({where:{id}})
