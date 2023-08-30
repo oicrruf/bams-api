@@ -7,6 +7,9 @@ import routesProperty from './src/routes/propertyRoutes.js'
 import routeRole from './src/routes/roleRoutes.js'
 import transactionRoutes from './src/routes/transactionsRoutes.js'
 import paymentsRouter from './src/routes/paymentsRouters.js'
+import 'dotenv/config'
+import colors from 'colors'
+
 async function main(){
   try{
     await sequelize.sync({force:false})
