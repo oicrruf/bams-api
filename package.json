@@ -18,8 +18,8 @@
     "sequelize-auto": "^0.8.8"
   },
   "scripts": {
-    "start": "node bams-api-main/index.js",
-    "server": "nodemon bams-api-main/index.js"
+    "start": "node index.js",
+    "server": "nodemon index.js"
   },
   "type": "module",
   "author": "",
