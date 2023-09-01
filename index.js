@@ -9,6 +9,7 @@ import transactionRoutes from './src/routes/transactionsRoutes.js'
 import paymentsRouter from './src/routes/paymentsRouters.js'
 import 'dotenv/config'
 import colors from 'colors'
+import cors from 'cors'
 
 async function main(){
   try{
@@ -19,6 +20,7 @@ async function main(){
     console.log('Conexion fallida, error ->' + error);
   }
 const app = express()
+app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({extended: false}))
 app.use(routeUsers)
