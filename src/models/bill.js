@@ -39,7 +39,7 @@ export default class bill extends Model {
               key: "amount",
             }
           },
-          oneTime: {
+          oneTime: {    
             type: DataTypes.INTEGER,
             allowNull: false,
             references: {
