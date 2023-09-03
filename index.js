@@ -7,6 +7,7 @@ import routesProperty from './src/routes/propertyRoutes.js'
 import routeRole from './src/routes/roleRoutes.js'
 import transactionRoutes from './src/routes/transactionsRoutes.js'
 import paymentsRouter from './src/routes/paymentsRouters.js'
+import billRouter from './src/routes/billRouter.js'
 import 'dotenv/config'
 import colors from 'colors'
 import cors from 'cors'
@@ -29,6 +30,7 @@ app.use(routesProperty)
 app.use(routeRole)
 app.use(paymentsRouter)
 app.use(transactionRoutes)
+app.use(billRouter)
 app.use(errorHandler)
 
 app.listen(3000)
